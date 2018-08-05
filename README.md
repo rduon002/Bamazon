@@ -2,6 +2,8 @@
 
 Bamazon is a database application allowing user to view, select, and purchase from a list of products. This project utilizes NodeJS and MySQL to complete the opereation. Project assigned by The Coding Bootcamp offered at UCSD Extensions. 
 
+❮img src="images/1.png" ❯
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
