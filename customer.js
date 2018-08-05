@@ -25,13 +25,13 @@ connection.connect(function (err) {
 
 //Function display table in terminal
 function displayProducts(answer) {
-    let query = "SELECT item_id, product_name, price, stock_quantity FROM products";
+    let query = "SELECT item_id, product_name, department_name, price, stock_quantity FROM products";
     connection.query(query, function (err, res) {
         //Construct table through CLI table utility
         let displayTable = new Table({
             head: ['Item ID', 'Product Name', 'Department', 'Price', 'Quantity'],
 
-            colWidths: [10, 30, 10, 10, 14]
+            colWidths: [10, 30, 20, 10, 14]
         });
 
         for (let i = 0; i < res.length; i++) {
@@ -39,7 +39,7 @@ function displayProducts(answer) {
                 [res[i].item_id, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity]
             );
         }
-        console.log(displayTable);
+        console.log(displayTable.toString());
         productSearch();
     });
 }
@@ -69,7 +69,9 @@ function productSearch(answer) {
 
             //If in stock and user would like to order, prompt user, complete order, and update db    
             } else {
-                console.log("Your order of " + answer.count + ' ' + res[0].product_name + "/s total cost is: $ " + parseInt(res[0].price) * parseInt(answer.count));
+                console.log("Your order of " + answer.count + ' ' + res[0].product_name + "'s total cost is:"); 
+                console.log("$ " + parseInt(res[0].price) * parseInt(answer.count));
+                //Subtract from current quantity after purchase 
                 let quantityLeft = res[0].stock_quantity - answer.count;
                 console.log(quantityLeft);
                 connection.query(

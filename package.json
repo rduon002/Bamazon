@@ -1,7 +1,6 @@
 {
   "name": "bamazon",
   "version": "1.0.0",
-  "description": "",
   "main": "customer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +11,15 @@
     "cli-table": "^0.3.1",
     "inquirer": "^6.0.0",
     "mysql": "^2.16.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rduon002/Bamazon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rduon002/Bamazon/issues"
+  },
+  "homepage": "https://github.com/rduon002/Bamazon#readme",
+  "description": ""
 }

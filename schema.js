@@ -6,7 +6,7 @@ USE bamazonDB;
 CREATE TABLE products (
   item_id INT AUTO_INCREMENT NOT NULL,
   product_name VARCHAR(100) NOT NULL,
-  department_name VARCHAR(100),
+  department_name VARCHAR(100) NOT NULL,
   price INT,
   stock_quantity INT,
   
@@ -17,7 +17,7 @@ INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES 
   ("Lamborghini Huracan LP 580", "Italian", 232000, 3), 
   ("Lamborghini Huracan LP 640", "Italian", 309000, 5),
-  ("Honda Civic Type R", "Japan", 36000, 4), 
+  ("Honda Civic Type R", "Japanese", 36000, 4), 
   ("BMW M3", "German", 68073, 7),
   ("BMW M5", "German", 57051, 20), 
   ("Nissan GT-R", "Japanese", 55000, 3),
