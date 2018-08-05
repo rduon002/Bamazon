@@ -13,14 +13,14 @@ let connection = mysql.createConnection({
     user: "root",
 
     //Password
-    password: "",
+    password: "diablo2",
     database: "bamazonDB"
 });
 
 //Connect to mysql server and sql database
 connection.connect(function (err) {
     if (err) throw err;
-    start();
+    displayProducts();
 });
 
 //Function display table in terminal
@@ -34,12 +34,12 @@ function displayProducts(answer) {
             colWidths: [10, 30, 10, 10, 14]
         });
 
-        for (var i = 0; i < res.length; i++) {
+        for (let i = 0; i < res.length; i++) {
             displayTable.push(
                 [res[i].item_id, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity]
             );
         }
-        console.log(displayTable.toString());
+        console.log(displayTable);
         productSearch();
     });
 }
